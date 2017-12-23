@@ -1,0 +1,371 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="http://st.motortrend.com/uploads/sites/5/2012/02/McLaren-MP4-12C-Cars-Warehouse.jpg">
+      <div class="carousel-caption">
+        <h1>buy cars from inventory</h1>
+        <br>
+        <button type="button" class="btn btn-default" routerLink="/vehicles">Buy</button>
+      </div>
+    </div>
+    <!--END ACTIVE-->
+    <div class="item">
+      <img src="https://smokerspack.files.wordpress.com/2010/10/bob-flavin-pic.jpg">
+      <div class="carousel-caption">
+        <h1>bid for cars at auctions</h1>
+        <br>
+        <button type="button" class="btn btn-default" routerLink="/vehicles">Bid</button>
+      </div>
+    </div>
+    <div class="item">
+      <img src="http://www.autohouston.net/wp-content/uploads/2013/05/car-dealership.jpg">
+      <div class="carousel-caption">
+        <h1>sell your car</h1>
+        <br>
+        <button type="button" class="btn btn-default">Sell</button>
+      </div>
+    </div>
+  </div>
+  <!--START SLIDER CONTROLS-->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div id="search-options">
+
+  <br>
+
+  <div class="container">
+  	<h4>Looking to Buy a Car?</h4>
+  	<form #filterVehicles="ngForm" (ngSubmit)="searchVehicles(filterVehicles)">
+  	  <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-6">
+        <label>Price Range</label>
+        <select class="form-control" name="minprice" ngModel="min">
+          <option selected value="min">Min</option>
+          <option value="0">$0</option>
+          <option value="5000">$5000</option>
+          <option value="10000">$10000</option>
+          <option value="15000">$15000</option>
+          <option value="20000">$20000</option>
+          <option value="25000">$25000</option>
+          <option value="30000">$30000</option>
+          <option value="35000">$35000</option>
+          <option value="40000">$40000</option>
+          <option value="45000">$45000</option>
+          <option value="50000">$50000</option>
+          <option value="60000">$60000</option>
+          <option value="70000">$70000</option>
+          <option value="80000">$80000</option>
+          <option value="90000">$90000</option>
+          <option value="100000">$100000</option>
+          <option value="120000">$120000</option>
+          <option value="140000">$140000</option>
+          <option value="160000">$160000</option>
+          <option value="180000">$180000</option>
+          <option value="200000">$200000</option>
+        </select>
+      </div>
+  	  
+  	  <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-6">
+        <label><br></label>
+        <select class="form-control" name="maxprice" ngModel="max">
+          <option selected value="max">Max</option>
+          <option value="5000">$5000</option>
+          <option value="10000">$10000</option>
+          <option value="15000">$15000</option>
+          <option value="20000">$20000</option>
+          <option value="25000">$25000</option>
+          <option value="30000">$30000</option>
+          <option value="35000">$35000</option>
+          <option value="40000">$40000</option>
+          <option value="45000">$45000</option>
+          <option value="50000">$50000</option>
+          <option value="60000">$60000</option>
+          <option value="70000">$70000</option>
+          <option value="80000">$80000</option>
+          <option value="90000">$90000</option>
+          <option value="100000">$100000</option>
+          <option value="120000">$120000</option>
+          <option value="140000">$140000</option>
+          <option value="160000">$160000</option>
+          <option value="180000">$180000</option>
+          <option value="200000">$200000</option>
+          <option value="none">None</option>
+        </select>
+      </div>
+
+      <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-6">
+        <label>Year Range</label>
+        <select class="form-control" name="minyear" ngModel="min">
+          <option selected value="min">From</option>
+          <option value="2000">2000</option>
+          <option value="2001">2001</option>
+          <option value="2002">2002</option>
+          <option value="2003">2003</option>
+          <option value="2004">2004</option>
+          <option value="2005">2005</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+        </select>
+      </div>
+
+      <div class="form-group col-lg-2 col-md-3 col-sm-3 col-xs-6">
+        <label><br></label>
+        <select class="form-control" name="maxyear" ngModel="max">
+          <option selected value="max">To</option>
+          <option value="2000">2000</option>
+          <option value="2001">2001</option>
+          <option value="2002">2002</option>
+          <option value="2003">2003</option>
+          <option value="2004">2004</option>
+          <option value="2005">2005</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+        </select>
+      </div>
+
+      <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <label>Make</label>
+        <select class="form-control" name="make" ngModel="all">
+          <option value="all">All Makes</option>
+          <option value="Acura">Acura</option>
+          <option value="AstonMartin">Aston Martin</option>
+          <option value="Audi">Audi</option>
+          <option value="Bentley">Bentley</option>
+          <option value="BMW">BMW</option>
+          <option value="Buick">Buick</option>
+          <option value="Cadillac">Cadillac</option>
+          <option value="Chevrolet">Chevrolet</option>
+          <option value="Chrysler">Chrysler</option>
+          <option value="Dodge">Dodge</option>
+          <option value="Ferrari">Ferrari</option>
+          <option value="Fiat">Fiat</option>
+          <option value="GMC">General Motors</option>
+          <option value="Honda">Honda</option>
+          <option value="Hyundai">Hyundai</option>
+          <option value="Jeep">Jeep</option>
+          <option value="LandRover">Land Rover</option>
+          <option value="Lexus">Lexus</option>
+          <option value="Maserati">Maserati</option>
+          <option value="Mercedez-Benz">Mercedez-Benz</option>
+          <option value="Nissan">Nissan</option>
+          <option value="Porsche">Porsche</option>
+          <option value="Scion">Scion</option>
+          <option value="Subaru">Subaru</option>
+          <option value="Tesla">Tesla</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Volkswagen">Volkswagen</option>
+          <option value="Volvo">Volvo</option>
+        </select>
+      </div>
+<!--
+      <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <label>Body Type</label>
+        <select class="form-control">
+          <option value="all">All Body Types</option>
+          <option value="convertable">Convertable</option>
+          <option value="coupe">Coupe</option>
+          <option value="hatchback">Hatchback</option>
+          <option value="minivan">Minivan</option>
+          <option value="pickup">Pickup</option>
+          <option value="sedan">Sedan</option>
+          <option value="suv">SUV</option>
+        </select>
+      </div>
+-->
+      <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <label>Mileage</label>
+        <select class="form-control" name="mileage" ngModel="any">
+          <option value="any">Any Mileage</option>
+          <option value="10000">Under 10,000</option>
+          <option value="20000">Under 20,000</option>
+          <option value="30000">Under 30,000</option>
+          <option value="40000">Under 40,000</option>
+          <option value="50000">Under 50,000</option>
+          <option value="60000">Under 60,000</option>
+          <option value="70000">Under 70,000</option>
+          <option value="80000">Under 80,000</option>
+          <option value="90000">Under 90,000</option>
+          <option value="100000">Under 100,000</option>
+        </select>
+      </div>
+
+      <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12"></div>
+
+      <div class="form-group col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <br>
+        <button type="submit" class="btn btn-default pull-right">Search</button>
+      </div>
+    </form>
+  </div>
+  <br>
+</div>
+
+<br>
+
+<!-- <div class="container">
+  <h2>Featured Vehicles</h2>
+  <div class="grid grid-pad">
+    <a *ngFor="let vehicle of vehicles" class="col-1-4" routerLink="/detail/{{vehicle.id}}">
+      <div class="module vehicle">
+        <h4>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</h4>
+      </div>
+    </a>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <h2>Featured Vehicles</h2>
+  <div class=" card col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let vehicle of vehicles">
+    <figure>
+      <div class="center-cropped">
+        <img  src="{{vehicle.image_link}}">
+      </div>
+      <figcaption>
+        <h5 class="card-title">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</h5>
+        <a *ngIf="authService.loggedIn()" routerLink="/detail/{{vehicle.id}}" class="btn btn-default">Details</a>
+        <a *ngIf="!authService.loggedIn()" routerLink="/login" class="btn btn-default">Details</a>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+-
+
+<!-- <div class="card col-lg-3 col-md-6 col-sm-6 col-xs-12">
+  <img class="card-img-top" src="{{vehicle.image_link}}">
+  <div class="card-block">
+    <h4 class="card-title">{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a routerLink="/detail/{{vehicle.id}} class="btn btn-primary">Buy</a>
+  </div>
+</div> -->
+
+<br>
+
+<div class="container text-center">
+  <h2>Our Services</h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="https://c2.staticflickr.com/6/5556/15075074577_bda5ec36c4_b.jpg" class="icon">
+      <h4>Direct Sales</h4>
+    </div>
+    <div class="col-sm-4">
+      <img src="https://image.flaticon.com/icons/png/512/189/189087.png" class="icon">
+      <h4>Auction Bids</h4>
+    </div>
+    <div class="col-sm-4">
+      <img src="http://d1arsn5g9mfrlq.cloudfront.net/sites/default/files/legacy_files/pictures/j/jdpower/0408/1b9baa38309a6834baa68dc4e5d994c8x.jpg" class="icon">
+      <h4>Sell Your Car</h4>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h4>
+        Bid for cars in auctions...
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="https://c1.staticflickr.com/8/7290/10723066213_6c66a0c5cb_b.jpg" class="img-responsive">
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <h4>
+        Insure your car with us
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <img src="https://static.pexels.com/photos/302856/pexels-photo-302856.jpeg" class="img-responsive">
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <h4>
+        Maintenance and Repairs
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <img src="https://static.pexels.com/photos/159293/car-engine-motor-clean-customized-159293.jpeg" class="img-responsive">
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="row">
+    <h4>
+      <a href="#hidden" data-toggle="collapse">
+        Care to learn more about us?
+      </a>
+    </h4>
+    <div id="hidden" class="collapse">
+      <h4>
+        Here's what we can do for you...
+      </h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+</div>
+
+<br>

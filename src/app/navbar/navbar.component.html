@@ -1,0 +1,31 @@
+<!-- <h1>{{title}}</h1> -->
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#">-->
+        <!--<img src="img/w3newbie.png">-->
+      <!--</a>-->
+      <a class="navbar-brand" routerLink="/dashboard"><b>HKM</b></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li routerLinkActive="active" routerLinkActiveOptions="{exact:true}"><a routerLink="/vehicles">Buy</a></li>
+        <!-- <li><a href="#">Bid</a></li> -->
+        <li *ngIf="authService.loggedIn()" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"><a routerLink="/sell">Sell</a></li>
+        <li *ngIf="!authService.loggedIn()" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"><a routerLink="/login">Login</a></li>
+        <li *ngIf="!authService.loggedIn()" routerLinkActive="active" routerLinkActiveOptions="{exact:true}"><a routerLink="/register">Register</a></li>
+        <li *ngIf="authService.loggedIn()"><a (click)="onLogOutClick()" href="#">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- <nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/vehicles">Vehicles</a>
+</nav> -->

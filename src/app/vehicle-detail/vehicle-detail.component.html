@@ -1,0 +1,107 @@
+<div *ngIf="vehicle">
+<!--  
+  <div class="container text-center">
+  	<div class="row">
+  	  <div class="col-lg-4 col-md-4"></div>
+  	  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="center-cropped">
+          <img  src="{{vehicle.image_link}}">
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" *ngFor="let image of vehicle.images; let i = index" [attr.data-slide-to]="i" ngClass="i==0 ? 'active' : ''"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div *ngFor="let image of vehicle.images; let i = index" [ngClass]="i == 0 ? 'item active' : 'item'">
+        <img src={{vehicle.images[i]}}>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <h3>Specifications:</h3>
+  	<div class="row">
+  	  <div class="col-lg-4 col-md-4">
+        <div><b>Year:</b> {{vehicle.year ? vehicle.year : 'Not Available'}}</div>
+        <div><b>Make:</b> {{vehicle.make ? vehicle.make : 'Not Available'}}</div>
+        <div><b>Model:</b> {{vehicle.model ? vehicle.model : 'Not Available'}}</div>
+        <div><b>Trim:</b> {{vehicle.trim_level ? vehicle.trim_level : 'Not Available'}}</div>
+        <div><b>Mileage:</b> {{vehicle.mileage ? vehicle.mileage : 'Not Available'}}</div>
+        <div><b>Engine:</b> {{vehicle.engine ? vehicle.engine : 'Not Available'}}</div>
+        <div><b>Transmission:</b> {{vehicle.transmission ? vehicle.transmission : 'Not Available'}}</div>
+        <div><b>Displacement:</b> {{vehicle.displacement ? vehicle.displacement : 'Not Available'}}</div>
+        <div><b>Exterior Color:</b> {{vehicle.exterior_color ? vehicle.exterior_color : 'Not Available'}}</div>
+        <div><b>Interior Color:</b> {{vehicle.interior_color ? vehicle.interior_color : 'Not Available'}}</div>
+        <div><b>Condition Grade:</b> {{vehicle.condition ? vehicle.condition : 'Not Available'}}</div>
+        <div><b>In-Service Date:</b> {{vehicle.in_service_date ? vehicle.in_service_date : 'Not Available'}}</div>
+        <div><b>Fuel Type:</b> {{vehicle.fuel_type ? vehicle.fuel_type : 'Not Available'}}</div>
+      </div>
+  	  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div><b>Window Sticker:</b> {{vehicle.window_sticker ? vehicle.window_sticker : 'Not Available'}}</div>
+        <div><b>Body Style:</b> {{vehicle.body_style ? vehicle.body_style : 'Not Available'}}</div>
+        <div><b>Doors:</b> {{vehicle.doors ? vehicle.doors : 'Not Available'}}</div>
+        <div><b>Vehicle Type:</b> {{vehicle.vehicle_type ? vehicle.vehicle_type : 'Not Available'}}</div>
+        <div><b>Salvage:</b> {{vehicle.salvage ? 'Yes' : 'No'}}</div>
+        <div><b>As Is:</b> {{vehicle.as_is ? 'Yes' : 'No'}}</div>
+        <div><b>Title State:</b> {{vehicle.title_state ? vehicle.title_state : 'Not Available'}}</div>
+        <div><b>Title Status:</b> {{vehicle.title_status ? vehicle.title_status : 'Not Available'}}</div>
+        <div><b>Drive Train:</b> {{vehicle.drive_train ? vehicle.drive_train : 'Not Available'}}</div>
+        <div><b>Interior Type:</b> {{vehicle.interior_type ? vehicle.interior_type : 'Not Available'}}</div>
+        <div><b>Top Type:</b> {{vehicle.top_type ? vehicle.top_type : 'Not Available'}}</div>
+        <div><b>Stereo:</b> {{vehicle.stereo ? vehicle.stereo : 'Not Available'}}</div>
+        <div><b>Airbags:</b> {{vehicle.airbags ? vehicle.airbags : 'Not Available'}}</div>
+  	  </div>
+  	  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div>Buy now for ${{vehicle.mmr}}</div>
+        <button class="btn btn-default">Buy</button>
+  	  </div>
+  	</div>
+  </div>
+
+  <br>
+
+  <div *ngIf="vehicle.equipment">
+    <div class="container">
+      <h3>Equipment:</h3>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <ul>
+            <span *ngFor="let option of vehicle.equipment; let i = index">
+              <li *ngIf="i % 3 == 0">{{option}}</li>
+            </span>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <ul>
+            <span *ngFor="let option of vehicle.equipment; let i = index">
+              <li *ngIf="i % 3 == 1">{{option}}</li>
+            </span>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <ul>
+            <span *ngFor="let option of vehicle.equipment; let i = index">
+              <li *ngIf="i % 3 == 2">{{option}}</li>
+            </span>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>

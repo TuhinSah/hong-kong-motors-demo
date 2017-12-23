@@ -1,0 +1,25 @@
+<br>
+
+<div class="container">
+	<h2 class="page-header">Log in</h2>
+	<form #logInData="ngForm" (ngSubmit)="onLogInSubmit(logInData)">
+		<div class="form-group">
+			<label>Username</label>
+			<input type="text" class="form-control" ngModel="" name="username">
+		</div>
+
+		<br>
+
+		<div class="form-group">
+			<label>Password</label>
+			<input type="password" class="form-control" ngModel="" name="password">
+		</div>
+
+		<br>
+
+		<input type="submit" class="btn btn-primary" value="Submit">
+	</form>
+	Don't have an account? <a routerLink="/register">Register</a>
+</div>
+
+<br>
